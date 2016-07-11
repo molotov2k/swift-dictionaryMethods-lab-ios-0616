@@ -13,7 +13,12 @@
  */
 // write your code here
 
-
+var starWarsHeroes = [
+    "Luke Skywalker",
+    "Princess Leia",
+    "Han Solo",
+    "Rey",
+]
 
 
 /*: question2
@@ -21,7 +26,10 @@
  */
 // write your code here
 
-
+var starWarsVillains = [
+    "Darth Vader",
+    "Emperor Palpatine",
+]
 
 
 /*: question3
@@ -29,7 +37,12 @@
  */
 // write your code here
 
-
+var starWarsDroids = [
+    "R2-D2",
+    "C-3PO",
+    "IG-88",
+    "BB-8",
+]
 
 
 /*: question4
@@ -37,15 +50,17 @@
  */
 // write your code here
 
-
+starWarsVillains.append("Kylo Ren")
 
 
 /*: question5
  ### 5. On second thought, we don't really care that much about IG-88. Remove him from the `starWarsDroids` array using the `removeAtIndex()` method. (What index is "IG-88" at?)
  */
 // write your code here
-
-
+let igIndex = starWarsDroids.indexOf("IG-88")
+if let igIndex = igIndex {
+    starWarsDroids.removeAtIndex(igIndex)
+}
 
 
 /*: question6
@@ -53,7 +68,11 @@
  */
 // write your code here
 
-
+var starWarsCharacters = [
+    "Heroes" : starWarsHeroes,
+    "Villains" : starWarsVillains,
+    "Droids" : starWarsDroids,
+]
 
 
 /*: question7
@@ -61,7 +80,10 @@
  */
 // write your code here
 
-
+var starWarsGangsters = [
+    "Watto",
+    "Jabba the Hutt",
+]
 
 
 /*: question8
@@ -69,7 +91,7 @@
  */
 // write your code here
 
-
+starWarsCharacters["Gangsters"] = starWarsGangsters
 
 
 /*: question9
@@ -77,7 +99,9 @@
  */
 // write your code here
 
-
+for (key, _) in starWarsCharacters {
+    print(key)
+}
 
 
 /*: question10
@@ -85,7 +109,7 @@
  */
 // write your code here
 
-
+starWarsCharacters.count
 
 
 /*: question11
@@ -93,7 +117,11 @@
  */
 // write your code here
 
-
+if starWarsCharacters.isEmpty {
+    print("Oh snap!")
+} else {
+    print("There are \(starWarsCharacters.count) items in the dictionary")
+}
 
 
 /*: question12
@@ -101,7 +129,11 @@
  */
 // write your code here
 
-
+var starWarsJedi = [
+    "Yoda",
+    "Obi-Wan Kenobi",
+    "Mace Windu",
+]
 
 
 /*: question13
@@ -109,7 +141,13 @@
  */
 // write your code here
 
+let recordCheck = starWarsCharacters.updateValue(starWarsJedi, forKey: "Jedi")
 
+if let recordCheck = recordCheck {
+    print("Updated Jedi key")
+} else {
+    print("Added Jedi key")
+}
 
 
 /*: question14
@@ -117,7 +155,13 @@
  */
 // write your code here
 
+let deleteCheck = starWarsCharacters.removeValueForKey("Bounty Hunters")
 
+if let deleteCheck = deleteCheck {
+    print("Removed Bounty Hunters")
+} else {
+    print("Bounty Hunters were never there!")
+}
 
 
 /*: question15
@@ -126,11 +170,13 @@
  After you've fixed the error, print out the contents of the "Jedi" key in `starWarsCharacters` to make sure your code works.
  */
 
-/* Start by uncommenting this block of code
- if var jedi = starWarsCharacters["Jedi"] {
- jedi.append("Aayla Secura")
- }
- */
+// Start by uncommenting this block of code
+
+if var jedi = starWarsCharacters["Jedi"] {
+    jedi.append("Aayla Secura")
+    starWarsCharacters["Jedi"] = jedi
+}
+print(starWarsCharacters["Jedi"]!)
 
 
 
@@ -139,13 +185,13 @@
  ### 16. We want to print out the names of our _Star Wars_ heroes line-by-line. Unfortunately, the code below isn't working correctly -- nothing gets printed! Can you fix it so that our heroes are printed out? (Again, the code has been commented out so that it doesn't interfere with earlier questions until they have been completed. Start by uncommenting the code, but there's still another bug!)
  */
 
-/*
- if let heroes = starWarsCharacters["Heros"] {
- for hero in heroes {
- print(hero)
- }
- }
- */
+
+if let heroes = starWarsCharacters["Heroes"] {
+    for hero in heroes {
+        print(hero)
+    }
+}
+
 
 
 
